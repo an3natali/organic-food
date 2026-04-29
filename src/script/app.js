@@ -17,8 +17,9 @@ document.addEventListener('DOMContentLoaded', function () {
   })
 
   //Ініціалізація слайдеру
-  new Glide('.sec5-cards', {
-    type: "carousel",
+
+  new Glide('.glide', {
+    type: 'carousel',
     startAt: 0,
     perView: 1
   }).mount();
@@ -131,7 +132,7 @@ function isEmailValid(value) {
 }
 //Ініціалізуємо роботу сервісу
 (function () {
-  emailjs.init({publicKey: "vvBFkiW9qmgtw2G-6"});
+  emailjs.init({ publicKey: "vvBFkiW9qmgtw2G-6" });
 })();
 //Налаштовуємо відправку форми по кліку на кнопку
 const formBtn = document.querySelector("#form-submit");
@@ -143,7 +144,7 @@ formBtn.addEventListener("click", function (e) {
   const isCurrentEmailValid = isEmailValid(currentEmail);
 
   if (isCurrentEmailValid) {
-    emailjs.send("service_5sq5ism","template_eaps2qd",{
+    emailjs.send("service_5sq5ism", "template_eaps2qd", {
       user_email: currentEmail,
     });
     emailField.value = "";

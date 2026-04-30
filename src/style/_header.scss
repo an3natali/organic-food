@@ -15,7 +15,7 @@ header {
                 margin-right: 30px;
 
                 &:last-child {
-                    margin-right: 0px;
+                    margin-right: 0;
                 }
 
                 a {
@@ -71,8 +71,9 @@ header {
             padding: 5px;
             border-radius: 36px;
             border: solid 1px #E0E0E0;
+            cursor: pointer;
 
-            .card-icon {
+            .cart-icon {
                 width: 50px;
                 height: 50px;
                 margin-right: 10px;
@@ -142,7 +143,6 @@ header {
                 }
             }
         }
-
     }
 
     @include onSmallDesktop {
@@ -177,7 +177,6 @@ header {
             }
         }
 
-
     }
 
     @include onLargeTablet {
@@ -204,7 +203,19 @@ header {
             }
 
             .cart {
-                display: none;
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                background-color: $white-color;
+                z-index: 2;
+
+                .cart-icon {
+                    margin-right: 0;
+                }
+
+                p {
+                    display: none;
+                }
             }
         }
     }
@@ -277,7 +288,6 @@ header {
                 }
             }
         }
-
     }
 
     @include onMobile {
@@ -327,6 +337,80 @@ header {
 
                         a {
                             font-size: 13px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+header {
+    @include onSmallTablet {
+        padding: 15px 0;
+
+        .desktop-menu {
+            display: none;
+        }
+
+        .mobile-menu {
+            display: flex;
+
+            button.burger {
+                height: 40px;
+                width: 40px;
+
+                img {
+                    width: 30px;
+
+                    &.hidden {
+                        display: none;
+                    }
+                }
+            }
+
+            .features {
+                .search {
+                    width: 40px;
+
+                    &.expanded {
+                        width: 100%;
+                    }
+                }
+            }
+
+            .nav {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                right: 0;
+                height: max-content;
+                padding: 20px 20px 30px;
+                background-color: $text-color;
+                transform: translateX(-100%);
+                transition: transform 0.2s linear;
+
+                &.visible {
+                    transform: translateY(0);
+                }
+
+                ul {
+                    li {
+                        text-align: center;
+                        color: $white-color;
+                        width: 80%;
+                        margin: 0 auto 15px;
+                        padding-bottom: 7px;
+                        border-bottom: solid 1px $white-color;
+
+                        &:last-child {
+                            margin-bottom: 0;
+                        }
+
+                        a {
+                            font-size: 14px;
                         }
                     }
                 }

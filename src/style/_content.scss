@@ -727,7 +727,17 @@
         }
     }
 
-    /*  @include onSmallDesktop {
+    .sec-6-card {
+        .info {
+            margin-bottom: 0;
+        }
+
+        .buy {
+            display: none;
+        }
+    }
+
+    @include onSmallDesktop {
         .sec-6-up {
             margin-bottom: 30px;
         }
@@ -755,7 +765,7 @@
         .sec-6-up {
             margin-bottom: 10px;
         }
-    }*/
+    }
 }
 
 .sec-7 {
